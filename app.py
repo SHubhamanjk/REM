@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 import pickle
@@ -46,9 +47,13 @@ def index():
             num_years_to_predict = year - end_year
             predictions = loaded_model.predict(start=len(train_data), end=len(train_data) + num_years_to_predict - 1, dynamic=True)
             prediction = predictions.iloc[-1]
-        prediction = round(prediction, 2)    
+        
+        # Format the prediction to 2 decimal places
+        prediction = round(prediction, 2)
 
     return render_template('index.html', prediction=prediction, year=year)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use PORT environment variable if available, otherwise default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
