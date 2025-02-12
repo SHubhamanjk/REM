@@ -21,3 +21,14 @@ The Renewable Energy Prediction Web App is a Flask-based web application that pr
 
 ## Deployment
 This project is deployed on Render for easy access.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+Developed by **Shubham Kumar Gupta**  
+- **GitHub**: [SHubhamanjk](https://github.com/SHubhamanjk)
+- **Email**: shubhashubham07kumargupta@gmail.com
+- **LinkedIn**: [Shubham Kumar Gupta](https://www.linkedin.com/in/shubhamiitpatna) 
+
+
